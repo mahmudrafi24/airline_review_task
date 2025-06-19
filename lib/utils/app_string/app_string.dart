@@ -1,6 +1,6 @@
 class AppString {
   AppString._();
-  
+
   static const String appName = 'Airline Review';
   static const String any = 'Any';
   static const String business = 'Business';
@@ -40,8 +40,29 @@ class AppString {
   static const String nine = '9';
   static const String thirty = '30';
   static const String seeMoreComments = 'See More Comments';
-  static const String postDetails = '''Stay tuned for a smoother, more convenient experience right at your fingertips ,  a smoother, more convenient  a smoother, more convenient other, more convenient experience right at your ''';
+  static const String postDetails =
+      '''Stay tuned for a smoother, more convenient experience right at your fingertips ,  a smoother, more convenient  a smoother, more convenient other, more convenient experience right at your ''';
   static const String dayAgo = 'Day Ago';
   static const String minAgo = 'Min Ago';
   static const String seeMore = 'See More';
+  static const String login = 'Login';
+  static const String signUp = 'Sign Up';
+  static const String email = 'Email';
+  static const String name = 'Name';
+  static const String fullName = 'Full Name';
+  static const String password = 'Password';
+  static const String confirmPassword = 'Confirm Password';
+  static const String forgotPassword = 'Forgot Password?';
+  static const String enterYourEmailToResetPassword =
+      'Enter your email to reset your password';
+  static const String dontHaveAnAccount = 'Don\'t have an account? ';
+  static const String alreadyHaveAnAccount = 'Already have an account? ';
+  static const String createAccount = 'Create Account';
+  static const String loginToYourAccount = 'Login to your account';
+  static const String enterYourEmail = 'Enter your email';
+  static const String enterYourPassword = 'Enter your password';
+  static const String enterYourConfirmPassword = 'Enter your confirm password';
+  static const String enterYourName = 'Enter your name';
+
+  static const String motto = 'Empowering Travelers: Rate, Review, Fly Better!';
 }

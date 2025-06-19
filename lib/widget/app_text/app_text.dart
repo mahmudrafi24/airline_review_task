@@ -20,7 +20,7 @@ class AppText extends StatelessWidget {
     this.right = 0,
     this.top = 0,
     this.bottom = 0,
-    this.isTranslate = true, // Default to translate
+    this.isTranslate = true,
   });
 
   final bool isTranslate;

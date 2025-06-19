@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "850330365437",
+    "project_id": "airline-review-task",
+    "storage_bucket": "airline-review-task.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850330365437:android:99e3f758a2bcc69dd2bd94",
+        "android_client_info": {
+          "package_name": "com.task.airline.review"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeB3NEAlHM9WiOFIWwynBxFeqljrGFMhc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

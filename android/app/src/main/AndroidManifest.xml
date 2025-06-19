@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="airline_reveiw"
+        android:label="Airline Review"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

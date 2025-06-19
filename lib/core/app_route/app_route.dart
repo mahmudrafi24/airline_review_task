@@ -1,4 +1,5 @@
 import 'package:airline_reveiw/core/Internet%20middleware/internet_middleware_check.dart';
+import 'package:airline_reveiw/screen/auth_screen/forgot_password/forgot_password.dart';
 import 'package:airline_reveiw/screen/auth_screen/login_screen/login_screen.dart';
 import 'package:airline_reveiw/screen/auth_screen/signup_screen/signup_screen.dart';
 import 'package:airline_reveiw/screen/error_screen/error_screen.dart';
@@ -12,6 +13,7 @@ class AppRoutes {
   static const String homeScreen = '/homeScreen';
   static const String loginScreen = '/loginScreen';
   static const String signupScreen = '/signupScreen';
+  static const String forgotPasswordScreen = '/forgotPasswordScreen';
 
   static List<GetPage> routes = [
     GetPage(
@@ -25,19 +27,28 @@ class AppRoutes {
       middlewares: [InternetCheckMiddleWare()],
     ),
     GetPage(
-        name: AppRoutes.homeScreen,
-        page: () => HomePage(),
-        transition: Transition.rightToLeft,
-        middlewares: [InternetCheckMiddleWare()]),
+      name: AppRoutes.homeScreen,
+      page: () => HomePage(),
+      transition: Transition.rightToLeft,
+      middlewares: [InternetCheckMiddleWare()],
+    ),
     GetPage(
-        name: AppRoutes.loginScreen,
-        page: () => LoginScreen(),
-        transition: Transition.rightToLeft,
-        middlewares: [InternetCheckMiddleWare()]),
+      name: AppRoutes.loginScreen,
+      page: () => LoginScreen(),
+      transition: Transition.rightToLeft,
+      middlewares: [InternetCheckMiddleWare()],
+    ),
     GetPage(
-        name: AppRoutes.signupScreen,
-        page: () => SignupScreen(),
-        transition: Transition.rightToLeft,
-        middlewares: [InternetCheckMiddleWare()]),
+      name: AppRoutes.signupScreen,
+      page: () => SignupScreen(),
+      transition: Transition.rightToLeft,
+      middlewares: [InternetCheckMiddleWare()],
+    ),
+    GetPage(
+      name: AppRoutes.forgotPasswordScreen,
+      page: () => ForgotPassword(),
+      transition: Transition.rightToLeft,
+      middlewares: [InternetCheckMiddleWare()],
+    ),
   ];
 }

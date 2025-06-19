@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class SplashScreenController extends GetxController {
   void navigateToOnboardScreen() {
     Future.delayed(Duration(seconds: 3), () {
-      Get.offAllNamed(AppRoutes.homeScreen);
+      Get.offAllNamed(AppRoutes.loginScreen);
     });
   }
 

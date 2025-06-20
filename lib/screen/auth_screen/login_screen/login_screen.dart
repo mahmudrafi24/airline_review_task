@@ -15,8 +15,11 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Ensure the LoginController is initialized and replace any existing instance
+    // This is useful if you want to reset the controller state when navigating back to this screen.
+    Get.delete<LoginController>(force: true);
     final controller = Get.put(LoginController());
-    
+
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SingleChildScrollView(
@@ -100,17 +103,17 @@ class LoginScreen extends StatelessWidget {
                 height: AppSize.height(value: 10),
               ),
               Obx(() => CustomTextField(
-                controller: controller.passwordController,
-                backgroundColor: AppColors.white,
-                keyboardType: TextInputType.visiblePassword,
-                height: 50,
-                borderRadius: 12,
-                hintText: AppString.enterYourPassword,
-                hintTextColor: AppColors.hintTextColor,
-                borderColor: AppColors.borderColor,
-                isPassword: controller.hidePassword.value,
-                validator: controller.validatePassword,
-              )),
+                    controller: controller.passwordController,
+                    backgroundColor: AppColors.white,
+                    keyboardType: TextInputType.visiblePassword,
+                    height: 50,
+                    borderRadius: 12,
+                    hintText: AppString.enterYourPassword,
+                    hintTextColor: AppColors.hintTextColor,
+                    borderColor: AppColors.borderColor,
+                    isPassword: controller.hidePassword.value,
+                    validator: controller.validatePassword,
+                  )),
               Gap(
                 height: AppSize.height(value: 05),
               ),
@@ -141,15 +144,15 @@ class LoginScreen extends StatelessWidget {
                 height: AppSize.height(value: 20),
               ),
               Obx(() => AppButton(
-                title: AppString.login,
-                width: double.infinity,
-                height: 50,
-                backgroundColor: AppColors.buttonColor,
-                titleColor: AppColors.white,
-                borderradius: 12,
-                isLoading: controller.isLoading.value,
-                onTap: controller.signIn,
-              )),
+                    title: AppString.login,
+                    width: double.infinity,
+                    height: 50,
+                    backgroundColor: AppColors.buttonColor,
+                    titleColor: AppColors.white,
+                    borderradius: 12,
+                    isLoading: controller.isLoading.value,
+                    onTap: controller.signIn,
+                  )),
               Gap(
                 height: AppSize.height(value: 20),
               ),

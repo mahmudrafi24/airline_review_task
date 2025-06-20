@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();
 
-  // Text editing controllers
+  // Text editing controllers - Initialize directly
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -62,7 +62,6 @@ class LoginController extends GetxController {
       if (!loginFormKey.currentState!.validate()) {
         return;
       }
-
       // Start loading
       isLoading.value = true;
 
@@ -72,13 +71,11 @@ class LoginController extends GetxController {
         password: passwordController.text.trim(),
       );
 
-      // Navigate to home or dashboard
-      Get.offAllNamed(AppRoutes.homeScreen); // Replace with your home route
+      // Navigate to home
+      Get.offAllNamed(AppRoutes.homeScreen); 
       
       // Show success message
       AppSnackBar.success('Login successful!');
-      
-
     } catch (e) {
       // Show error message
       AppSnackBar.error('Login failed: ${e.toString()}');

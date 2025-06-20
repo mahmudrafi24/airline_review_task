@@ -292,7 +292,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               Gap(
-                height: AppSize.height(value: 20),
+                height: AppSize.height(value: 50),
               ),
             ],
           ),

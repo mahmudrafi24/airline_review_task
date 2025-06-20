@@ -1,4 +1,5 @@
 import 'package:airline_reveiw/core/app_route/app_route.dart';
+import 'package:airline_reveiw/screen/auth_screen/login_screen/controller/login_screen_controller.dart';
 import 'package:airline_reveiw/services/repository/auth_repository/auth_repository.dart';
 import 'package:airline_reveiw/widget/app_log/app_log.dart';
 import 'package:airline_reveiw/widget/app_snacbar/app_snackbar.dart';
@@ -136,27 +137,30 @@ class SignupController extends GetxController {
       );
 
       if (userCredential != null) {
-        // Update display name
-        await _authRepository.updateDisplayName(nameController.text.trim());
+      // Update display name
+      await _authRepository.updateDisplayName(nameController.text.trim());
 
-        // Send email verification
-        await _authRepository.sendEmailVerification();
+      // Send email verification
+      await _authRepository.sendEmailVerification();
 
-        // Show success message
-        AppSnackBar.success('Please check your email to verify your account');
-        appLog('Signup successful for ${emailController.text.trim()}');
+      // Show success message
+      AppSnackBar.success('Please check your email to verify your account');
+      appLog('Signup successful for ${emailController.text.trim()}');
 
-        // Navigate to login screen
-        Get.offAllNamed(AppRoutes.loginScreen); // Replace with your login route
-      }
-    } catch (e) {
-      // Show error message
-      AppSnackBar.error('Failed to create account: ${e.toString()}');
-      appLog('Signup error: $e');
-    } finally {
-      // Stop loading
-      isLoading.value = false;
+      // Delete the existing LoginController instance to ensure fresh instance
+      Get.delete<LoginController>();
+      
+      // Navigate to login screen
+      Get.offAllNamed(AppRoutes.loginScreen); // Replace with your login route
     }
+  } catch (e) {
+    // Show error message
+    AppSnackBar.error('Failed to create account: ${e.toString()}');
+    appLog('Signup error: $e');
+  } finally {
+    // Stop loading
+    isLoading.value = false;
+  }
   }
 
   //! Clear form fields
@@ -171,9 +175,11 @@ class SignupController extends GetxController {
 
   /// Navigate to login screen
   void goToLogin() {
-    clearForm();
-    Get.offNamed(AppRoutes.loginScreen); // Replace with your login route
-  }
+  clearForm();
+  // Delete the existing LoginController instance to ensure fresh instance
+  Get.delete<LoginController>();
+  Get.offNamed(AppRoutes.loginScreen); // Replace with your login route
+}
 
   /// Check password strength
   String getPasswordStrength(String password) {

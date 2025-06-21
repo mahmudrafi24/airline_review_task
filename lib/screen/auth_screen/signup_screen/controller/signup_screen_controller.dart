@@ -148,7 +148,7 @@ class SignupController extends GetxController {
       appLog('Signup successful for ${emailController.text.trim()}');
 
       // Delete the existing LoginController instance to ensure fresh instance
-      Get.delete<LoginController>();
+      //Get.delete<LoginController>();
       
       // Navigate to login screen
       Get.offAllNamed(AppRoutes.loginScreen); // Replace with your login route
@@ -177,7 +177,7 @@ class SignupController extends GetxController {
   void goToLogin() {
   clearForm();
   // Delete the existing LoginController instance to ensure fresh instance
-  Get.delete<LoginController>();
+  //Get.delete<LoginController>();
   Get.offNamed(AppRoutes.loginScreen); // Replace with your login route
 }
 
